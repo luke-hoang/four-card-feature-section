@@ -1,0 +1,132 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600&display=swap');
+
+:root {
+  --red: hsl(0, 78%, 62%);
+  --cyan: hsl(180, 62%, 55%);
+  --orange: hsl(34, 97%, 64%);
+  --blue: hsl(212, 86%, 64%);
+  --very-dark-blue: hsl(234, 12%, 34%);
+  --grayish-blue: hsl(229, 6%, 66%);
+  --very-light-gray: hsl(0, 0%, 98%);
+}
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: Poppins, sans-serif;
+  font-size: 15px;
+  background-color: var(--very-light-gray);
+  color: var(--grayish-blue);
+}
+
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.container {
+  margin: 4em 2em;
+}
+
+.overview {
+  max-width: 450px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.overview h1 {
+  margin-bottom: 0.5em;
+  color: var(--very-dark-blue);
+}
+
+.overview h1 .extra-thin {
+  font-weight: 200;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(3, 350px);
+  grid-template-rows: repeat(2, 250px);
+  grid-template-areas:
+    "a b d"
+    "a c d";
+  column-gap: 2em;
+  row-gap: 2em;
+  justify-content: center;
+  align-items: center;
+  margin: 4em auto 0;
+}
+
+.card {
+  padding: 2em;
+  background-repeat: no-repeat;
+  background-position: right 30px bottom 30px;
+  box-shadow: 0 15px 30px -11px hsl(213, 47%, 47%, 50%);
+  box-sizing: border-box;
+  min-height: 250px;
+  border-radius: 4px;
+  border-top: 4px solid;
+}
+
+.card h2 {
+  font-size: 1.25em;
+  color: var(--very-dark-blue);
+}
+
+.card p {
+  font-size: 0.9em;
+}
+
+.supervisor {
+  border-top-color: var(--cyan);
+  background-image: url('./images/icon-supervisor.svg');
+  grid-area: a;
+}
+
+.team-builder {
+  border-top-color: var(--red);
+  background-image: url('./images/icon-team-builder.svg');
+  grid-area: b;
+}
+
+.karma {
+  border-top-color: var(--orange);
+  background-image: url('./images/icon-karma.svg');
+  grid-area: c;
+}
+
+.calculator {
+  border-top-color: var(--blue);
+  background-image: url('./images/icon-calculator.svg');
+  grid-area: d;
+}
+
+@media screen and (max-width: 1170px) {
+  .grid-container {
+    grid-template:
+    "a c"
+    "b d";
+  }  
+}
+
+@media screen and (max-width: 739px) {
+  .grid-container {
+    min-width: 315px;
+    grid-template:
+      "a"
+      "b"
+      "c"
+      "d"
+  }
+}
+
+@media screen and (max-width: 424px) {
+  .overview h1 {
+    font-size: 1.5em;
+  }
+}
